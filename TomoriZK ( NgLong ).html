@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>TomoriZK</title>
+
+  <body>
+  <div class="chill-links">
+    <a href="https://instabio.cc/tomorizk" target="_blank" title="Xem Bio">
+      <img src="https://f58-zpg-r.zdn.vn/jpg/1494555928979365336/6d9e3c1d3ebc89e2d0ad.jpg" alt="Bio" class="chill-img">
+    </a>
+    <a href="https://zalo.me/0328743417" target="_blank" title="Zalo QR">
+      <img src="https://f60-zpg-r.zdn.vn/jpg/480153203238323134/5b01890e8baf3cf165be.jpg" alt="Zalo" class="chill-img">
+    </a>
+  </div>
+  <style>
+
+    .chill-links {
+  position: fixed;
+  top: 20px;
+  left: 1150px;
+  z-index: 10001;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.chill-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 16px;
+  border: 2.5px solid #e91e63;
+  box-shadow: 0 2px 12px #e91e6380;
+  background: #fff;
+  object-fit: cover;
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+  display: block;
+}
+.chill-img:before {
+  content: 'Ảnh không tải được';
+  display: block;
+  background: #f0f0f0;
+  color: #666;
+  text-align: center;
+  line-height: 200px;
+}
+.chill-img:hover {
+  transform: scale(1.08) rotate(-3deg);
+  box-shadow: 0 4px 20px #e91e63cc;
+}
+/* ...existing code... */
+.chill-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 16px;
+  border: 4px solid #e91e63;
+  box-shadow: 0 0 16px #e91e6380;
+  background: #fff;
+  object-fit: cover;
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+  display: block;
+  animation: led-border-chill 1.2s infinite linear;
+}
+
+@keyframes led-border-chill {
+  0%   { border-color: #e91e63; box-shadow: 0 0 16px #e91e63; }
+  25%  { border-color: #00eaff; box-shadow: 0 0 24px #00eaff; }
+  50%  { border-color: #ffeb3b; box-shadow: 0 0 32px #ffeb3b; }
+  75%  { border-color: #fff; box-shadow: 0 0 40px #fff; }
+  100% { border-color: #e91e63; box-shadow: 0 0 16px #e91e63; }
+}
+/* ...existing code... */
+  </style>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://cdn.pixabay.com/video/2025/03/26/267574_tiny.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+      @keyframes gradientBG {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+    }
+    .info-box {
+  position: absolute;
+  top: 24%;
+  left: 0%;
+  width: 333px;
+  height: auto;
+  padding: 20px;
+  color: white;
+  z-index: 2;
+  border-radius: 77px;
+  border: 4px solid #e91e63;
+  box-shadow: 0 0 12px #e91e6380;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('https://ben.com.vn/tin-tuc/wp-content/uploads/2020/09/hinh-nen-laptop-anime-min.jpg') center/cover no-repeat;
+  animation: led-border 1.2s infinite linear;
+}
+
+@keyframes led-border {
+  0%   { box-shadow: 0 0 12px #e91e63; border-color: #e91e63; }
+  25%  { box-shadow: 0 0 16px #00eaff; border-color: #00eaff; }
+  50%  { box-shadow: 0 0 20px #ffeb3b; border-color: #ffeb3b; }
+  75%  { box-shadow: 0 0 24px #fff; border-color: #fff; }
+  100% { box-shadow: 0 0 12px #e91e63; border-color: #e91e63; }
+}    
+
+    .time {
+      font-size: 38px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .date {
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .lunar {
+      font-size: 16px;
+      opacity: 0.85;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .weather {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .weather hr {
+      border: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      margin: 12px 0;
+    }
+
+    .weather .section-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-size: 17px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .weather span {
+      display: block;
+    }
+
+    .time, .weather {
+  animation: led-glow 1.2s infinite alternate;
+  text-shadow:
+    0 0 8px #fff,
+    0 0 16px #e91e63,
+    0 0 24px #00eaff,
+    0 0 32px #ffeb3b;
+}
+@keyframes led-glow {
+  0%   { color: #fff; text-shadow: 0 0 8px #e91e63, 0 0 16px #00eaff; }
+  25%  { color: #e91e63; text-shadow: 0 0 12px #00eaff, 0 0 24px #ffeb3b; }
+  50%  { color: #00eaff; text-shadow: 0 0 16px #ffeb3b, 0 0 32px #fff; }
+  75%  { color: #ffeb3b; text-shadow: 0 0 20px #fff, 0 0 40px #e91e63; }
+  100% { color: #fff; text-shadow: 0 0 8px #e91e63, 0 0 16px #00eaff; }
+}
+
+#floating-decor {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+.floating-bubble, .floating-heart {
+  position: absolute;
+  opacity: 0.7;
+  pointer-events: none;
+  animation: float-around 8s linear infinite;
+}
+.floating-bubble {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff, #00eaff 60%, transparent 100%);
+  box-shadow: 0 0 8px #00eaff99;
+}
+.floating-heart {
+  width: 22px; height: 22px;
+  background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center/contain;
+  filter: drop-shadow(0 0 6px #e91e63cc) brightness(1.2) saturate(1.5);
+  animation: float-around 10s linear infinite;
+}
+@keyframes float-around {
+  0%   { transform: translateY(0) scale(1) rotate(0deg);}
+  20%  { transform: translateY(-20px) scale(1.1) rotate(10deg);}
+  40%  { transform: translateY(10px) scale(0.95) rotate(-8deg);}
+  60%  { transform: translateY(-15px) scale(1.05) rotate(8deg);}
+  80%  { transform: translateY(5px) scale(1) rotate(-6deg);}
+  100% { transform: translateY(0) scale(1) rotate(0deg);}
+}
+/* hiệu ứng nhấp nháy và led xung quanh avatar */
+.avatar-img {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  border: 4px solid #e91e63;
+  box-shadow: 0 0 12px #e91e6380;
+  object-fit: cover;
+  background: #fff;
+  animation: led-border 1.2s infinite linear;
+}
+
+@keyframes led-border {
+  0%   { border-color: #e91e63; box-shadow: 0 0 12px #e91e63; }
+  25%  { border-color: #00eaff; box-shadow: 0 0 16px #00eaff; }
+  50%  { border-color: #ffeb3b; box-shadow: 0 0 20px #ffeb3b; }
+  75%  { border-color: #fff; box-shadow: 0 0 24px #fff; }
+  100% { border-color: #e91e63; box-shadow: 0 0 12px #e91e63; }
+}
+/* hiệu ứng xung quanh avatar */
+.avatar-img {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: 4px solid #e91e63;
+  box-shadow: 0 0 12px #e91e6380;
+  object-fit: cover;
+  background: #fff;
+  animation: led-border 1.2s infinite linear;
+}
+
+@keyframes led-border {
+  0%   { border-color: #e91e63; box-shadow: 0 0 12px #e91e63; }
+  25%  { border-color: #00eaff; box-shadow: 0 0 16px #00eaff; }
+  50%  { border-color: #ffeb3b; box-shadow: 0 0 20px #ffeb3b; }
+  75%  { border-color: #fff; box-shadow: 0 0 24px #fff; }
+  100% { border-color: #e91e63; box-shadow: 0 0 12px #e91e63; }
+}
+/* Hiệu ứng chữ nhấp nháy */
+.avatar-name, .date, .lunar, .weather {
+  text-shadow: 0 0 8px #e91e63, 0 0 2px #fff;
+    animation: led-glow 1.2s infinite alternate;
+  text-shadow:
+    0 0 8px #fff,
+    0 0 16px #e91e63,
+    0 0 24px #00eaff,
+    0 0 32px #ffeb3b;
+}
+@keyframes led-glow {
+  0%   { color: #fff; text-shadow: 0 0 8px #e91e63, 0 0 16px #00eaff; }
+  25%  { color: #e91e63; text-shadow: 0 0 12px #00eaff, 0 0 24px #ffeb3b; }
+  50%  { color: #00eaff; text-shadow: 0 0 16px #ffeb3b, 0 0 32px #fff; }
+  75%  { color: #ffeb3b; text-shadow: 0 0 20px #fff, 0 0 40px #e91e63; }
+  100% { color: #fff; text-shadow: 0 0 8px #e91e63, 0 0 16px #00eaff; }
+}
+/* Hiệu ứng bong bóng */
+.bubble {
+  position: fixed;
+  bottom: -60px;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff 60%, #00eaff 90%, transparent 100%);
+  box-shadow: 0 0 12px #00eaff80, 0 0 2px #fff;
+  opacity: 0.7;
+  animation: bubble-up 4s linear forwards;
+  z-index: 99998;
+}
+@keyframes bubble-up {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 0.7;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(var(--bubble-x, 0px)) translateY(-100vh) scale(var(--bubble-scale, 1.2));
+    opacity: 0;
+  }
+}
+  </style>
+</head>
+<!-- giới thiệu chào mừng :)))) -->
+<div class="marquee">
+  Chào mừng bạn đến với web của TomoriZK (NgLong)! Chúc bạn một ngày vui vẻ 💖
+</div>
+<style>
+.marquee {
+  width: 100vw;
+  white-space: nowrap;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10002;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 6px 0;
+  border-bottom: 2px solid #e91e63;
+  animation: marquee-move 18s linear infinite;
+}
+@keyframes marquee-move {
+  0% { transform: translateX(100vw);}
+  100% { transform: translateX(-100vw);}
+}
+</style>
+<div class="info-box">
+  <div class="avatar-box">
+    <img src="https://f56-zpg-r.zdn.vn/jpg/3705050334832474148/8930f721f48043de1a91.jpg" alt="avatar" class="avatar-img">
+    <div class="avatar-name">TomoriZK (NgLong) </div>
+  </div>
+  <div id="floating-decor"></div>
+  <div class="time" id="time">--:--</div>
+  <div class="date" id="solar-date">--</div>
+  <div class="lunar" id="lunar-date">--</div>
+  <hr>
+  <div class="weather" id="weather">Đang tải dữ liệu thời tiết tổng hợp...</div>
+</div>
+<style>
+  /* Avatar box */
+.avatar-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.avatar-img {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  border: 4px solid #e91e63;
+  box-shadow: 0 0 12px #e91e6380;
+  object-fit: cover;
+  background: #fff;
+}
+.avatar-name {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 1px 6px #e91e63, 0 0 2px #000;
+  letter-spacing: 1px;
+}
+.avatar-nick {
+  font-size: 14px;
+  font-weight: normal;
+  color: #ffe0f7;
+}
+.avatar-img {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: 4px solid #e91e63;
+  box-shadow: 0 0 12px #e91e6380;
+  object-fit: cover;
+  background: #fff;
+  animation: led-border 1.2s infinite linear;
+  animation: led-glow 1.2s infinite alternate;
+  text-shadow:
+    0 0 8px #fff,
+    0 0 16px #e91e63,
+    0 0 24px #00eaff,
+    0 0 32px #ffeb3b;
+}
+@keyframes led-glow {
+  0%   { color: #fff; text-shadow: 0 0 8px #e91e63, 0 0 16px #00eaff; }
+  25%  { color: #e91e63; text-shadow: 0 0 12px #00eaff, 0 0 24px #ffeb3b; }
+  50%  { color: #00eaff; text-shadow: 0 0 16px #ffeb3b, 0 0 32px #fff; }
+  75%  { color: #ffeb3b; text-shadow: 0 0 20px #fff, 0 0 40px #e91e63; }
+  100% { color: #fff; text-shadow: 0 0 8px #e91e63, 0 0 16px #00eaff; }
+}
+.led-banner {
+  animation: led-banner-glow 1.2s infinite alternate;
+}
+@keyframes led-banner-glow {
+  0%   { color: #fff; text-shadow: 2px 2px 8px #e91e63, 0 0 12px #000; }
+  25%  { color: #e91e63; text-shadow: 2px 2px 12px #00eaff, 0 0 24px #ffeb3b; }
+  50%  { color: #00eaff; text-shadow: 2px 2px 16px #ffeb3b, 0 0 32px #fff; }
+  75%  { color: #ffeb3b; text-shadow: 2px 2px 20px #fff, 0 0 40px #e91e63; }
+  100% { color: #fff; text-shadow: 2px 2px 8px #e91e63, 0 0 12px #000; }
+}
+</style>
+  <!-- Mò lòi dom đã được led :))) -->
+    <div id="wibu-banner" class="led-banner" style="position:fixed;top:10%;left:50%;transform:translateX(-50%);z-index:9999;font-size:40px;font-weight:bold;color:#fff;text-shadow:2px 2px 8px #e91e63,0 0 12px #000;pointer-events:none;user-select:none;">TomoriZK (NgLong)</div>
+  </div>
+<style>
+  .led-banner {
+  animation: led-banner-glow 1.2s infinite alternate;
+}
+@keyframes led-banner-glow {
+  0%   { color: #fff; text-shadow: 2px 2px 8px #e91e63, 0 0 12px #000; }
+  25%  { color: #e91e63; text-shadow: 2px 2px 12px #00eaff, 0 0 24px #ffeb3b; }
+  50%  { color: #00eaff; text-shadow: 2px 2px 16px #ffeb3b, 0 0 32px #fff; }
+  75%  { color: #ffeb3b; text-shadow: 2px 2px 20px #fff, 0 0 40px #e91e63; }
+  100% { color: #fff; text-shadow: 2px 2px 8px #e91e63, 0 0 12px #000; }
+}
+</style>
+  </div>
+  <!-- Sakura canvas -->
+  <canvas id="sakura-canvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9998;"></canvas>
+
+  <script>
+    // --- Cấu hình ---
+    const CONFIG = {
+      API_KEYS: {
+        TOMORROW: "mdTWQAInBIDB3mHiDtkwuTlwhVB50rqn",
+        OPENWEATHER: "e707d13f116e5f7ac80bd21c37883e5e",
+        WEATHERAPI: "fe221e3a25734f0297994922240611"
+      },
+      DEFAULT_LOCATION: 'Phú Thọ'
+    };
+
+    // --- DOM Elements ---
+    const timeEl = document.getElementById('time');
+    const solarDateEl = document.getElementById('solar-date');
+    const lunarDateEl = document.getElementById('lunar-date');
+    const weatherEl = document.getElementById('weather');
+
+    // --- Các hàm tiện ích ---
+    function getWeatherDescription(code) {
+      const weatherCodes = {
+        1000: "Trời quang", 1100: "Gần quang", 1101: "Có mây rải rác",
+        1102: "Nhiều mây", 1001: "Mây dày", 2000: "Sương mù",
+        2100: "Sương mù nhẹ", 4000: "Mưa phùn", 4001: "Mưa",
+        4200: "Mưa nhẹ", 4201: "Mưa vừa", 4202: "Mưa to",
+        8000: "Mưa rào"
+      };
+      return weatherCodes[code] || "Chưa xác định";
+    }
+
+    function getPrecipitationForecast(hourlyData) {
+      if (!Array.isArray(hourlyData)) return "Không có dữ liệu dự báo mưa.";
+      const next24Hours = hourlyData.slice(0, 24);
+      const significantRain = next24Hours.find(h => h?.values?.precipitationProbability > 40);
+
+      if (!significantRain) return "Không có khả năng mưa đáng kể.";
+
+      const time = new Date(significantRain.time);
+      const probability = significantRain.values.precipitationProbability;
+      return `Có khả năng mưa (${probability}%) vào khoảng ${time.getHours()}h.`;
+    }
+
+    // --- Logic chính ---
+
+    async function fetchAllWeatherData(lat, lon) {
+      const { TOMORROW, OPENWEATHER, WEATHERAPI } = CONFIG.API_KEYS;
+      const tomorrowUrl = `https://api.tomorrow.io/v4/weather/forecast?location=${lat},${lon}&timesteps=1h,1d&apikey=${TOMORROW}`;
+      const openWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OPENWEATHER}&units=metric&lang=vi`;
+      const weatherApiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${WEATHERAPI}&q=${lat},${lon}&days=3&aqi=no&alerts=no&lang=vi`;
+
+      const [tomorrowRes, openWeatherRes, weatherApiRes] = await Promise.all([
+        fetch(tomorrowUrl), fetch(openWeatherUrl), fetch(weatherApiUrl)
+      ]);
+
+      if (!tomorrowRes.ok || !openWeatherRes.ok || !weatherApiRes.ok) {
+        throw new Error('Một trong các API thời tiết đã gặp lỗi.');
+      }
+      return await Promise.all([tomorrowRes.json(), openWeatherRes.json(), weatherApiRes.json()]);
+    }
+
+    function displayWeather(tomorrow, openWeather, weatherApi) {
+      const current = openWeather;
+      const hourly = tomorrow.timelines.hourly;
+      const currentTemp = current.main;
+      const currentWeather = current.weather[0];
+      const rainForecast = getPrecipitationForecast(hourly);
+
+      weatherEl.innerHTML = `
+            <div>
+                <div class="section-title">Thời tiết ${CONFIG.DEFAULT_LOCATION}</div>
+                <span>• <b>Hiện tại:</b> ${currentWeather.description.charAt(0).toUpperCase() + currentWeather.description.slice(1)}</span>
+                <span>• <b>Nhiệt độ:</b> ${currentTemp.temp.toFixed(1)}°C (Cảm giác như ${currentTemp.feels_like.toFixed(1)}°C)</span>
+                <span>• <b>Độ ẩm:</b> ${currentTemp.humidity}%</span>
+                <span>• <b>Dự báo mưa:</b> ${rainForecast}</span>
+            </div>`;
+    }
+
+    async function initializeWeather() {
+      try {
+        const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(CONFIG.DEFAULT_LOCATION)}&count=1&language=vi&format=json`;
+        const geoResponse = await fetch(geoUrl);
+        const geoData = await geoResponse.json();
+
+        if (!geoData.results || geoData.results.length === 0) throw new Error('Không tìm thấy tọa độ thành phố.');
+        const { latitude, longitude } = geoData.results[0];
+
+        const [tomorrowData, openWeatherData, weatherApiData] = await fetchAllWeatherData(latitude, longitude);
+        displayWeather(tomorrowData, openWeatherData, weatherApiData);
+      } catch (error) {
+        console.error("Lỗi khi khởi tạo thời tiết:", error);
+        weatherEl.textContent = `Không thể tải dữ liệu cho ${CONFIG.DEFAULT_LOCATION}.`;
+      }
+    }
+
+    function getCanChiYear(date) {
+      const CAN = ["Canh", "Tân", "Nhâm", "Quý", "Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ"];
+      const CHI = ["Thân", "Dậu", "Tuất", "Hợi", "Tý", "Sửu", "Dần", "Mão", "Thìn", "Tỵ", "Ngọ", "Mùi"];
+      const year = date.getFullYear();
+      return `Năm ${CAN[year % 10]} ${CHI[year % 12]}`;
+    }
+
+    function updateClock() {
+      const now = new Date();
+      timeEl.textContent = now.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit', hour12: false });
+      solarDateEl.textContent = now.toLocaleDateString('vi-VN', { weekday: 'long', day: 'numeric', month: 'long' });
+      lunarDateEl.textContent = getCanChiYear(now);
+    }
+    // --- Khởi chạy ---
+    document.addEventListener('DOMContentLoaded', () => {
+      updateClock();
+      setInterval(updateClock, 1000);
+      initializeWeather();
+
+      // --- HÀM DÙNG CHO CONSOLE ---
+      window.changeLocation = function (newLocation) {
+        if (!newLocation || typeof newLocation !== 'string') {
+          console.error('Lỗi: Vui lòng cung cấp tên vị trí là một chuỗi ký tự. Ví dụ: changeLocation("Hà Nội")');
+          return;
+        }
+        console.log(`Yêu cầu đổi vị trí sang: ${newLocation}`);
+        CONFIG.DEFAULT_LOCATION = newLocation;
+        weatherEl.innerHTML = `Đang tải dữ liệu thời tiết tổng hợp cho ${newLocation}...`;
+        initializeWeather();
+      };
+    });
+
+    // Sakura (hoa anh đào) rơi
+    const canvas = document.getElementById('sakura-canvas');
+    const ctx = canvas.getContext('2d');
+    let width = window.innerWidth, height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    window.addEventListener('resize', () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    });
+
+    const sakuraPetals = [];
+    const petalImg = new Image();
+    petalImg.src = 'https://voice-aac-dl.zdn.vn/138806986613433793/cad048cc1f9bf1c5a88a.aac'; // Đường dẫn tới file ảnh hoa anh đào PNG nền trong suốt
+
+    function randomPetal() {
+      return {
+        x: Math.random() * width,
+        y: Math.random() * -height,
+        r: 16 + Math.random() * 18,
+        speed: 1 + Math.random() * 2,
+        drift: (Math.random() - 0.5) * 1.5,
+        rot: Math.random() * Math.PI * 2,
+        rotSpeed: (Math.random() - 0.5) * 0.02
+      };
+    }
+
+    for (let i = 10; i < 100; i++) sakuraPetals.push(randomPetal());
+
+    function drawPetals() {
+      ctx.clearRect(0, 0, width, height);
+      for (const p of sakuraPetals) {
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.globalAlpha = 999999;
+        ctx.drawImage(petalImg, -p.r/2, -p.r/2, p.r, p.r);
+        ctx.restore();
+
+        p.y += p.speed;
+        p.x += p.drift;
+        p.rot += p.rotSpeed;
+
+        if (p.y > height + 30 || p.x < -40 || p.x > width + 40) {
+          Object.assign(p, randomPetal());
+          p.y = -30;
+        }
+      }
+      requestAnimationFrame(drawPetals);
+    }
+
+    petalImg.onload = () => drawPetals();
+  </script>
+<!-- ...âm thanh :))... -->
+<audio id="bg-music" autoplay controls style="position:fixed;bottom:16px;right:120px;z-index:10000;opacity:0.85;"></audio>
+<button id="prev-btn" style="position:fixed;bottom:15px;right:80px;z-index:9999;">⏮️</button>
+<button id="next-btn" style="position:fixed;bottom:15px;right:40px;z-index:9999;">⏭️</button>
+<script>
+  // Danh sách nhạc
+  const tracks = [
+    "https://f2-voice-aac-dl.zdn.vn/8757902115999437050/8aaa722d277ac924906b.aac",
+    "https://voice-aac-dl.zdn.vn/4038072371684821950/1a4d03215676b828e167.aac",
+    "https://voice-aac-dl.zdn.vn/138806986613433793/cad048cc1f9bf1c5a88a.aac",
+   
+  ];
+  let current = 0;
+  const audio = document.getElementById('bg-music');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  audio.src = tracks[current];
+  audio.loop = false;
+
+  // Khi hết bài thì phát bài tiếp theo
+  audio.addEventListener('ended', function() {
+    current = (current + 1) % tracks.length;
+    audio.src = tracks[current];
+    audio.play();
+  });
+
+  // Nút Next
+  nextBtn.onclick = function() {
+    current = (current + 1) % tracks.length;
+    audio.src = tracks[current];
+    audio.play();
+  };
+
+  // Nút Prev
+  prevBtn.onclick = function() {
+    current = (current - 1 + tracks.length) % tracks.length;
+    audio.src = tracks[current];
+    audio.play();
+  };
+
+  // Tự động phát nhạc trên Chrome/Edge: cần thao tác người dùng lần đầu
+  document.addEventListener('click', function playMusicOnce() {
+    if (audio.paused) audio.play();
+    document.removeEventListener('click', playMusicOnce);
+  });
+</script>
+<style>
+  /* nhấp nháy :)))  */
+#prev-btn, #next-btn {
+  animation: btn-glow 1.2s infinite alternate;
+  border: none;
+  background: #e91e63;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 22px;
+  box-shadow: 0 0 8px #e91e63, 0 0 2px #fff;
+  transition: background 0.2s;
+}
+#prev-btn:hover, #next-btn:hover {
+  background: #00eaff;
+}
+@keyframes btn-glow {
+  0% { box-shadow: 0 0 8px #e91e63;}
+  100% { box-shadow: 0 0 20px #ffeb3b;}
+}
+</style>
+
+<script>
+// ...existing code...
+// Mưa trái tim nhỏ
+function createRainHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'rain-heart';
+  const size = 10 + Math.random() * 10;
+  heart.style.width = heart.style.height = size + 'px';
+  heart.style.left = Math.random() * window.innerWidth + 'px';
+  heart.style.animationDuration = (4 + Math.random() * 3) + 's';
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 8000);
+}
+
+// Gọi hiệu ứng mưa trái tim liên tục
+setInterval(createRainHeart, 200);
+</script>
+<style>
+  .rain-heart {
+  position: fixed;
+  top: -30px;
+  background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center/contain;
+  pointer-events: none;
+  z-index: 99999;
+  animation: fall-heart linear;
+}
+
+@keyframes fall-heart {
+  to {
+    top: 100vh;
+    opacity: 0.2;
+    transform: translateY(100vh) scale(0.7) rotate(360deg);
+  }
+}
+</style>
+<style>
+  /* Hiệu ứng bong bóng */
+  .bubble {
+  position: fixed;
+  bottom: -60px;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff 60%, #00eaff 90%, transparent 100%);
+  box-shadow: 0 0 12px #00eaff80, 0 0 2px #fff;
+  opacity: 0.7;
+  animation: bubble-up 4s linear forwards;
+  z-index: 99998;
+}
+@keyframes bubble-up {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 0.7;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(var(--bubble-x, 0px)) translateY(-100vh) scale(var(--bubble-scale, 1.2));
+    opacity: 0;
+  }
+}
+/* nhấp nháy :))) */
+#prev-btn, #next-btn {
+  animation: btn-glow 1.2s infinite alternate;
+  border: none;
+  background: #e91e63;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 22px;
+  box-shadow: 0 0 8px #e91e63, 0 0 2px #fff;
+  transition: background 0.2s;
+}
+#prev-btn:hover, #next-btn:hover {
+  background: #00eaff;
+}
+@keyframes btn-glow {
+  0% { box-shadow: 0 0 8px #e91e63;}
+  100% { box-shadow: 0 0 20px #ffeb3b;}
+}
+</style>
+<script>
+// filepath: c:\Users\tomorizk\Downloads\999\TomoriZK ( NgLong ).html
+function createBubble() {
+  const bubble = document.createElement('div');
+  bubble.className = 'bubble';
+  const left = Math.random() * window.innerWidth;
+  const scale = 0.7 + Math.random() * 1.2;
+  const xDrift = (Math.random() - 0.5) * 120;
+  bubble.style.left = left + 'px';
+  bubble.style.width = bubble.style.height = (24 + Math.random() * 32) + 'px';
+  bubble.style.setProperty('--bubble-x', xDrift + 'px');
+  bubble.style.setProperty('--bubble-scale', scale);
+  document.body.appendChild(bubble);
+  setTimeout(() => bubble.remove(), 4000);
+}
+setInterval(createBubble, 333);
+</script>
+<!-- di chuột phát sáng hẹ hẹ -->
+<script>
+document.addEventListener('mousemove', function(e) {
+  const trail = document.createElement('div');
+  trail.style.position = 'fixed';
+  trail.style.left = (e.clientX-6) + 'px';
+  trail.style.top = (e.clientY-6) + 'px';
+  trail.style.width = '12px';
+  trail.style.height = '12px';
+  trail.style.borderRadius = '50%';
+  trail.style.background = 'radial-gradient(circle, #fff 40%, #e91e63 100%)';
+  trail.style.pointerEvents = 'none';
+  trail.style.zIndex = 99999;
+  trail.style.opacity = '0.7';
+  trail.style.transition = 'opacity 0.5s linear';
+  document.body.appendChild(trail);
+  setTimeout(() => { trail.style.opacity = '0'; }, 10);
+  setTimeout(() => { trail.remove(); }, 500);
+});
+</script>
+</html>
